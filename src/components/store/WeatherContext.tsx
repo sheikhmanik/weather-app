@@ -1,12 +1,25 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import { DEFAULT_PLACE } from "../util";
 import { getWeatherData } from "../api";
 
-export const WeatherContext = createContext();
+interface Weather {
+    place: {},
+    setPlace: () => void, 
+    loading: boolean, 
+    currentWeather: {}, 
+    hourlyWeather: string, 
+    dailyWeather: string,
+}
 
-export const WeatherContextProvider = ({ children }) => {
+export const WeatherContext = createContext<Weather | undefined>(undefined);
 
-    const [place, setPlace] = useState(DEFAULT_PLACE);
+interface ContextProviderProps {
+    children: ReactNode;
+}
+
+export const WeatherContextProvider = ({ children }: ContextProviderProps) => {
+
+    const [place, setPlace] = useState<{}>(DEFAULT_PLACE);
     const [loading, setLoading] = useState(false);
     const [currentWeather, setCurrentWeather] = useState({});
     const [hourlyWeather, setHourlyWeather] = useState([]);

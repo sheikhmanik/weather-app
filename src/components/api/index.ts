@@ -57,9 +57,9 @@
 
 import currentWeather from "./current-weather.json";
 import dailyWeather from "./daily-forecast.json";
-import hourlyWeather from "./hourly-forecast.json"
+import hourlyWeather from "./hourly-forecast.json";
 
-export async function getWeatherData(endpoint, place_id, measurementSystem) {
+export async function getWeatherData(endpoint: string, place_id: string, measurementSystem: string) {
     if (endpoint === "hourly") {
         return hourlyWeather;
     } else if (endpoint === "daily") {
@@ -72,7 +72,7 @@ export async function getWeatherData(endpoint, place_id, measurementSystem) {
 }
 
 
-export async function searchPlaces(text) {
+export async function searchPlaces(text: string) {
     return response;
 }
 

@@ -8,7 +8,7 @@ import Loader from "./components/UI/Loader";
 function App() {
   const { loading, currentWeather, hourlyWeather, dailyWeather } = useContext(WeatherContext);
   return (
-    <div className="">
+    <div className="mb-16">
       <Header/>
       {loading ? (
         <div className="container mx-auto w-full flex items-center justify-center mt-24">

@@ -1,11 +1,11 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import App from './App.jsx'
-import { ModeContextProvider } from './components/store/ModeContext.jsx'
-import { WeatherContextProvider } from './components/store/WeatherContext.jsx'
+import App from './App'
+import { ModeContextProvider } from './components/store/ModeContext'
+import { WeatherContextProvider } from './components/store/WeatherContext'
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ModeContextProvider>
       <WeatherContextProvider>
