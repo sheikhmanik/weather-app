@@ -1,4 +1,10 @@
-export default function HourlyForecast({ data }) {
+import { HourlyData } from "./types/WeatherDataType";
+
+interface HourlyWeatherProps {
+    data: HourlyData;
+}
+
+export default function HourlyForecast({ data }: HourlyWeatherProps) {
 
     const { date, icon, temperature, wind, precipitation } = data;
 

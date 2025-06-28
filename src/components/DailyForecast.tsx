@@ -1,4 +1,10 @@
-export default function DailyForecast({ data }) {
+import { DailyData } from "./types/WeatherDataType";
+
+interface DailyWeatherProps {
+    data: DailyData;
+}
+
+export default function DailyForecast({ data }: DailyWeatherProps) {
 
     const { day, icon, temperature_min, temperature_max, precipitation } = data;
 

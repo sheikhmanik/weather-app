@@ -1,21 +1,22 @@
-import { useContext, useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { searchPlaces } from "./api";
-import { WeatherContext } from "./store/WeatherContext";
+import useWeatherContext from "./store/useWeatherContext";
+import { Place } from "./types/WeatherDataType";
 
 export default function Search() {
 
-    const { setPlace } = useContext(WeatherContext);
+    const { setPlace } = useWeatherContext();
 
     const [text, setText] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
+    const [searchResults, setSearchResults] = useState<Place[]>([]);
 
-    async function onSearch(e) {
+    async function onSearch(e: ChangeEvent<HTMLInputElement>) {
         setText(e.target.value);
         const data = await searchPlaces(text);
         setSearchResults(data);
     }
 
-    function selectPlace(place) {
+    function selectPlace(place: Place) {
         setPlace(place);
         setSearchResults([]);
         setText("");

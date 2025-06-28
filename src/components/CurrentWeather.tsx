@@ -1,7 +1,12 @@
 import { faDroplet, faWind, faSun, faCloud, faEye } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CurrentData } from "./types/WeatherDataType";
 
-export default function CurrentWeather({ data }) {
+interface CurrentWeatherProps {
+  data: CurrentData;
+}
+
+export default function CurrentWeather({ data }: CurrentWeatherProps) {
     
   const {
     icon_num,

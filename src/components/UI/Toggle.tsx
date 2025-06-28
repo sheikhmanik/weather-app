@@ -1,9 +1,7 @@
-import { useContext } from "react"
-import { ModeContext } from "../store/ModeContext"
-
+import useThemeContext from "../UI/useThemeContext";
 export default function ToggleMode() {
 
-    const { handleMode } = useContext(ModeContext);
+    const { handleMode } = useThemeContext();
 
     return (
         <label className="swap swap-rotate">
